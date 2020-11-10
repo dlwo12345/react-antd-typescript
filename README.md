@@ -14,6 +14,13 @@
 - react-router-dom
   > yarn add react-router-dom
 
+
+## dev 패키지
+- react-app-rewired
+ > yarn add react-app-rewired --dev
+- customize-cra
+ > yarn add customize-cra --dev
+
 ## start
 
 - npm run start
