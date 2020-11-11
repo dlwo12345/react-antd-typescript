@@ -16,6 +16,8 @@
 - node-sass
  > yarn add --dev node-sass@4.14.1
  >> 버전 호환문제로 4.14.1 버전 고정
+- styled-components
+ > yarn add styled-components
 
 
 ## dev 패키지
