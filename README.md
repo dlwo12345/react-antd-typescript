@@ -11,13 +11,13 @@
 
 - antd (UI framework)
   > yarn add antd
-- react-router-dom
-  > yarn add react-router-dom
+- react-router-dom, @types/react-router-dom
+  > yarn add react-router-dom @types/react-router-dom
 - node-sass
  > yarn add --dev node-sass@4.14.1
  >> 버전 호환문제로 4.14.1 버전 고정
-- styled-components
- > yarn add styled-components
+- styled-components 
+ > yarn add styled-components @types/styled-components
 
 
 ## dev 패키지
