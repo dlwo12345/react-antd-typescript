@@ -9,14 +9,17 @@
 
 ## 추가 패키지
 
-- antd
+- antd (UI framework)
   > yarn add antd
 - react-router-dom
   > yarn add react-router-dom
+- node-sass
+ > yarn add --dev node-sass@4.14.1
+ >> 버전 호환문제로 4.14.1 버전 고정
 
 
 ## dev 패키지
-- react-app-rewired
+- react-app-rewired 
  > yarn add react-app-rewired --dev
 - customize-cra
  > yarn add customize-cra --dev
