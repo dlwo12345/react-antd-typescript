@@ -18,6 +18,8 @@
  >> 버전 호환문제로 4.14.1 버전 고정
 - styled-components 
  > yarn add styled-components @types/styled-components
+- recoil 
+ > yarn add recoil @types/recoil
 
 
 ## dev 패키지

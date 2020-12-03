@@ -33,20 +33,6 @@ const routes = [
     },
   },
   {
-    path: '/context',
-    name: 'context',
-    component: lazy(() => {
-      return new Promise((resolve) => {
-        setTimeout(() => resolve(import('@/pages/context/Container')), 1000);
-      });
-    }),
-    meta: {
-      navigation: {
-        show: true,
-      },
-    },
-  },
-  {
     path: '/recoil',
     name: 'recoil',
     component: lazy(() => {
