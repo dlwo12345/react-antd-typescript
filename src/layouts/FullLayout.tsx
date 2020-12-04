@@ -4,6 +4,7 @@ import {Layout, Menu} from 'antd';
 import {UserOutlined, VideoCameraOutlined, UploadOutlined} from '@ant-design/icons';
 import {NavLink} from 'react-router-dom';
 import {routes} from '@/router';
+import Nav from './Nav';
 
 const {Header, Content, Sider, Footer} = Layout;
 
@@ -24,19 +25,7 @@ function WithFullLayout(WrappedComponent: any): any {
             }}
           >
             <div className="logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-              {routes
-                .filter((route) => route.meta.navigation.show)
-                .map((route) => {
-                  return (
-                    <Menu.Item key={route.path}>
-                      <NavLink to={route.path} exact={route.exact} activeClassName="active">
-                        {route.name}
-                      </NavLink>
-                    </Menu.Item>
-                  );
-                })}
-            </Menu>
+            <Nav></Nav>
           </Sider>
           <Layout>
             <Header className="site-layout-sub-header-background" style={{color: 'white', textAlign: 'center', padding: 0}}>
