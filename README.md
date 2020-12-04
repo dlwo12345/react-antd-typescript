@@ -14,19 +14,16 @@
 - react-router-dom, @types/react-router-dom
   > yarn add react-router-dom @types/react-router-dom
 - node-sass
- > yarn add --dev node-sass@4.14.1
- >> 버전 호환문제로 4.14.1 버전 고정
-- styled-components 
- > yarn add styled-components @types/styled-components
-- recoil 
- > yarn add recoil @types/recoil
-
-
-## dev 패키지
-- react-app-rewired 
- > yarn add react-app-rewired --dev
+  > yarn add --dev node-sass@4.14.1
+  > > 버전 호환문제로 4.14.1 버전 고정
+- styled-components
+  > yarn add styled-components @types/styled-components
+- recoil
+  > yarn add recoil @types/recoil
+- react-app-rewired
+  > yarn add react-app-rewired
 - customize-cra
- > yarn add customize-cra --dev
+  > yarn add customize-cra
 
 ## start
 
