@@ -35,6 +35,7 @@ export const nextIdState = atom({
 
 export const incrementNextId = selector({
   key: 'incrementNextId',
+  get: () => {},
   set: ({get, set}) => {
     const id = get(nextIdState);
     set(nextIdState, id + 1);
@@ -43,27 +44,30 @@ export const incrementNextId = selector({
 
 export const toggleTodo = selector({
   key: 'toggleTodo',
+  get: () => {},
   set: ({get, set}, id) => {
     set(
       todoState,
-      get(todoState).map((todo) => (todo.id === id ? {...todo, done: !todo.done} : todo)),
+      get(todoState).map((todo: any) => (todo.id === id ? {...todo, done: !todo.done} : todo)),
     );
   },
 });
 
 export const removeTodo = selector({
   key: 'removeTodo',
+  get: () => {},
   set: ({get, set}, id) => {
     set(
       todoState,
-      get(todoState).filter((todo) => todo.id !== id),
+      get(todoState).filter((todo: any) => todo.id !== id),
     );
   },
 });
 
 export const createTodo = selector({
   key: 'createTodo',
-  set: ({get, set}, todo) => {
+  get: () => {},
+  set: ({get, set}, todo: any) => {
     const todos = get(todoState);
     set(
       todoState,

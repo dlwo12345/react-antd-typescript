@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
 import {MdAdd} from 'react-icons/md';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
-import {createTodo, incrementNextId, nextIdState} from '../state';
+import {createTodo, nextIdState} from '../state';
 import styled, {css} from 'styled-components';
 
 const CircleButton: any = styled.button`
@@ -80,7 +80,6 @@ const Input = styled.input`
 function RecoilTodoCreate() {
   const emitCreateTodo: any = useSetRecoilState(createTodo);
   const nextId = useRecoilValue(nextIdState);
-  const emitIncrementNextId: any = useSetRecoilState(incrementNextId);
   const [open, setOpen]: any = useState(false);
   const [value, setValue] = useState('');
 
@@ -97,7 +96,6 @@ function RecoilTodoCreate() {
       },
       [],
     );
-    emitIncrementNextId(); // nextId 하나 증가
 
     setValue(''); // input 초기화
     setOpen(false); // open 닫기
