@@ -60,13 +60,14 @@ export const createTodo = selector({
   get: () => {},
   set: ({get, set}, todo: any) => {
     const todos = get(todoState);
+    const nextId = get(nextIdState);
     set(
       todoState,
       todos.concat({
-        id: todos.length + 1,
+        id: nextId,
         ...todo,
       }),
     );
-    set(nextIdState, get(nextIdState) + 1); // nextId 값 1증가
+    set(nextIdState, nextId + 1); // nextId 값 1증가
   },
 });
