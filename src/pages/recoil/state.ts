@@ -1,4 +1,5 @@
-import {atom, selector} from 'recoil';
+import {useCallback} from 'react';
+import {atom, useRecoilState} from 'recoil';
 
 const initialTodos = [
   {
@@ -33,41 +34,38 @@ export const nextIdState = atom({
   default: initialTodos.length + 1,
 });
 
-export const toggleTodo = selector({
-  key: 'toggleTodo',
-  get: () => {},
-  set: ({get, set}, id) => {
-    set(
-      todoState,
-      get(todoState).map((todo: any) => (todo.id === id ? {...todo, done: !todo.done} : todo)),
-    );
-  },
-});
+export const useTodoState = () => {
+  const [todos, setTodos] = useRecoilState(todoState);
+  const [nextId, setNextId] = useRecoilState(nextIdState);
 
-export const removeTodo = selector({
-  key: 'removeTodo',
-  get: () => {},
-  set: ({get, set}, id) => {
-    set(
-      todoState,
-      get(todoState).filter((todo: any) => todo.id !== id),
-    );
-  },
-});
+  const toggleTodo = useCallback(
+    ({id}: any) => {
+      const newValue = todos.map((todo: any) => (todo.id === id ? {...todo, done: !todo.done} : todo));
+      setTodos(newValue);
+    },
+    [todos],
+  );
 
-export const createTodo = selector({
-  key: 'createTodo',
-  get: () => {},
-  set: ({get, set}, todo: any) => {
-    const todos = get(todoState);
-    const nextId = get(nextIdState);
-    set(
-      todoState,
-      todos.concat({
+  const removeTodo = useCallback(
+    ({id}: any) => {
+      const newValue = todos.filter((todo: any) => todo.id !== id);
+      setTodos(newValue);
+    },
+    [todos],
+  );
+
+  const createTodo = useCallback(
+    (todo: any) => {
+      const newValue = todos.concat({
         id: nextId,
         ...todo,
-      }),
-    );
-    set(nextIdState, nextId + 1); // nextId 값 1증가
-  },
-});
+      });
+
+      setTodos(newValue);
+      setNextId(nextId + 1); // nextId 값 1증가
+    },
+    [todos, nextId],
+  );
+
+  return {toggleTodo, removeTodo, createTodo};
+};

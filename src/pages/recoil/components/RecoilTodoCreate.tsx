@@ -1,8 +1,7 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {MdAdd} from 'react-icons/md';
-import {useSetRecoilState} from 'recoil';
-import {createTodo} from '../state';
 import styled, {css} from 'styled-components';
+import {useTodoState} from '../state';
 
 const CircleButton: any = styled.button`
   background: #38d9a9;
@@ -78,7 +77,7 @@ const Input = styled.input`
 `;
 
 function RecoilTodoCreate() {
-  const emitCreateTodo: any = useSetRecoilState(createTodo);
+  const {createTodo} = useTodoState();
   const [open, setOpen]: any = useState(false);
   const [value, setValue] = useState('');
 
@@ -87,13 +86,10 @@ function RecoilTodoCreate() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault(); // 새로고침 방지
-    emitCreateTodo(
-      {
-        text: value,
-        done: false,
-      },
-      [],
-    );
+    createTodo({
+      text: value,
+      done: false,
+    });
 
     setValue(''); // input 초기화
     setOpen(false); // open 닫기
