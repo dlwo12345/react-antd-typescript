@@ -13,6 +13,11 @@ const menuList = [
     name: 'recoil 예제',
     exact: true,
   },
+  {
+    path: '/modal',
+    name: 'modal 예제',
+    exact: true,
+  },
 ];
 
 const Nav = () => {

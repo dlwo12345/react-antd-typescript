@@ -38,6 +38,7 @@ function WithFullLayout(WrappedComponent: any): any {
             <Footer style={{textAlign: 'center'}}>footer 영역</Footer>
           </Layout>
         </Layout>
+        
       );
     }
   };
