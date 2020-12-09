@@ -1,7 +1,7 @@
 import React from 'react';
 import {RecoilRoot} from 'recoil';
 import {WithFullLayout} from '@/layouts';
-import Content from './Content';
+import Content from './content';
 
 const Container = () => {
   return (

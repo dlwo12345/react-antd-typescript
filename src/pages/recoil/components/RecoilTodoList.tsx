@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RecoilTodoItem from './RecoilTodoItem';
+import RecoilTodoItem from './recoilTodoItem';
 import {todoState} from '../state';
 import {useRecoilValue} from 'recoil';
 

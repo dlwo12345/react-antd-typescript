@@ -11,22 +11,22 @@ const routes = [
     path: '/',
     name: 'root',
     exact: true,
-    component: lazy(() => import('@/pages/home/Container')),
+    component: lazy(() => import('@/pages/home/container')),
   },
   {
     path: '/home',
     name: 'home',
-    component: lazy(() => import('@/pages/home/Container')),
+    component: lazy(() => import('@/pages/home/container')),
   },
   {
     path: '/recoil',
     name: 'recoil',
-    component: lazy(() => import('@/pages/recoil/Container')),
+    component: lazy(() => import('@/pages/recoil/container')),
   },
   {
     path: '/modal',
     name: 'modal',
-    component: lazy(() => import('@/pages/modal/Container')),
+    component: lazy(() => import('@/pages/modal/container')),
   },
   {
     path: '*',
