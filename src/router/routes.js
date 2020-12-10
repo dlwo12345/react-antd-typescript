@@ -29,6 +29,11 @@ const routes = [
     component: lazy(() => import('@/pages/modal/container')),
   },
   {
+    path: '/table',
+    name: 'table',
+    component: lazy(() => import('@/pages/table/container')),
+  },
+  {
     path: '*',
     component: NotFound,
   },

@@ -18,6 +18,11 @@ const menuList = [
     name: 'modal 예제',
     exact: true,
   },
+  {
+    path: '/table',
+    name: 'table 예제',
+    exact: true,
+  },
 ];
 
 const Nav = () => {

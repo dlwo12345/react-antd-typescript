@@ -1,33 +1,31 @@
-import React, {FC, useState} from 'react';
-import {Button, Modal} from 'antd';
+import React, {useEffect} from 'react';
+import {RecoilRoot} from 'recoil';
 import {WithFullLayout} from '@/layouts';
+import Content from './content';
 
-const Container: FC = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+// import data from './test.json';
+import gqlData from './tempData.json';
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
+const getData = () => {
+  return gqlData;
+};
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+const Container = () => {
+  const {data}: any = getData();
+  const dataSource = data.me.sites.map(({name, region, pv}: any) => {
+    return {
+      name: name,
+      region: region?.name,
+      pv: pv?.capacity?.value,
+      totalMonthPower: pv?.power?.reduce((total: number, item: any) => total + item.value, 0),
+      avgPowerHours: pv?.powerHours?.reduce((total: number, item: any) => total + item.value, 0) / pv?.powerHours?.length,
+    };
+  });
 
   return (
-    <div className="App">
-      <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
-      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
-    </div>
+    <RecoilRoot>
+      <Content dataSource={dataSource} />
+    </RecoilRoot>
   );
 };
 
