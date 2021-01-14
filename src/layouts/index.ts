@@ -1,4 +1,4 @@
 // hoc layout
-import WithFullLayout from './FullLayout';
+import WithFullLayout from './fullLayout';
 
 export {WithFullLayout};

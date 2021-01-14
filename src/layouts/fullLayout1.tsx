@@ -4,7 +4,7 @@ import {Layout, Menu} from 'antd';
 import {UserOutlined, VideoCameraOutlined, UploadOutlined} from '@ant-design/icons';
 import {NavLink} from 'react-router-dom';
 import {routes} from '@/router';
-import Nav from './Nav';
+import Nav from './nav';
 
 const {Header, Content, Sider, Footer} = Layout;
 
