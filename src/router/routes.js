@@ -3,7 +3,7 @@
 // refs = https://reacttraining.com/react-router/web/guides/static-routes
 
 // 하위 route는 routes의 배열로 작성합니다.
-import NotFound from '@/pages/NotFound';
+import NotFound from '@/pages/notFound';
 import {lazy} from 'react';
 
 const routes = [
