@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import {Button, Modal} from 'antd';
 import {WithFullLayout} from '@/layouts';
+// import ModalTestComponent from './components/modalTestComponent';
 
 const Container: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -23,9 +24,7 @@ const Container: FC = () => {
         Open Modal
       </Button>
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        {/* <ModalTestComponent /> */}
       </Modal>
     </div>
   );
