@@ -24,6 +24,8 @@
   > yarn add react-app-rewired
 - customize-cra
   > yarn add customize-cra
+- Apollo, Graphql
+  > npm install @apollo/client graphql
 
 ## start
 
