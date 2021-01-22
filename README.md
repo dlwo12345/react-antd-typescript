@@ -10,7 +10,7 @@
 ## 추가 패키지
 
 - antd (UI framework)
-  > yarn add antd
+  > yarn add antd @types/antd
 - react-router-dom, @types/react-router-dom
   > yarn add react-router-dom @types/react-router-dom
 - node-sass
